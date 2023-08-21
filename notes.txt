@@ -1,0 +1,87 @@
+form validation in angular
+--------------------------
+form create
+    1. template driven form
+
+      creating form using pure html tags
+      difficult to validate
+
+
+    2.Model driven form
+
+     creating form using httml,ts
+     easy to validate
+
+
+
+     our form is template driven so convert it into model driven form
+
+
+MODEL DRIVEN fORM
+------------------
+
+using html we create form and also create a model of that form in ts and connect that ts to html
+for this we use a module ie reactiveFormModule
+                            -----------------
+      reactiveFormsModule---module used to create model form
+      FormBuilder-------class in reactiveFormsModule to create modal form
+      group()------------method to create model form
+
+
+
+    in ouur html file--in form give [formGroup]=the name we given in ts
+                    --in input give [formControlname]=the key names in ts
+
+
+                    this is the property binding
+--validation in model driven
+        Validators-class
+           this class have inbuilt methods for validation.
+          -> pattern---to set regular epression rule,accept string
+                rules
+                -----
+                1.rule='[a-zA-Z0-9]'---small,capital letters and numbers 
+                2.rule='[^a-zA-Z0-9]'---negation ---special characters
+                3.rule='[a-zA-Z0-9]+'---any length minimum one and no maximum limit
+                4.rule='[a-zA-Z0-9]*'---min zero to no max limit 
+                5.rule='[a-zA-Z0-9]{4,8}'---min count 4 max count 8
+                   default count wil be 1
+                   eg:for vehicle---  [K][L]{2}[A-Z]{2}[0-9]{4}
+                -------quantifiers + * {num1,num2} ?
+                        ==========
+                deafualt--{1}
+
+
+                
+                \d--digit
+                \s--space
+                \W-expect wprds-special characters
+                \w-words
+                \D-except digit
+                regular expression-- used to create rule accordingly 
+          -> required---must have value
+
+
+
+Angular directories
+-------------------
+to manipulate DOM
+
+
+1. structural directive--to change the structure of DOM
+    a. *ngIf--- to apply conditions
+    b. *ngFor--- to give loop
+2.component directive
+3.attribute directive
+
+
+
+js--for asynchronous method--
+         resolve--then()
+         reject--catch()
+
+ts--- for asynchronous method--
+        resolve--subscibe()
+        reject--catch()
+
+ 
